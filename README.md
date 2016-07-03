@@ -1,6 +1,6 @@
 This project is most useful if your Maven web project:
 * Has only static content
-* Is fed dynamic data from a seperate API (REST, perhaps?)
+* Is fed dynamic data from a separate API (REST, perhaps?)
   * Don't forget to add a [proxy middleware](https://github.com/drewzboto/grunt-connect-proxy) if your API doesn't support [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 
 # Usage
