@@ -7,6 +7,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-openport');
 
   var taskConfig = {
     pkg: grunt.file.readJSON('package.json'),
@@ -62,5 +63,7 @@ module.exports = function(grunt) {
   grunt.initConfig(grunt.util._.extend(taskConfig, buildConfig));
 
   grunt.registerTask('build', ['jshint', 'concat']);
-  grunt.registerTask('default', ['build', 'karma:start', 'connect', 'watch']);
+  grunt.registerTask('findports', ['openport:watch.app.options.livereload:35729', 'openport:connect.server.options.livereload:35729']);
+  grunt.registerTask('develop', ['findports', 'karma:start', 'connect', 'watch']);
+  grunt.registerTask('default', ['build', 'develop']);
 };

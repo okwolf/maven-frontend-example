@@ -11,6 +11,7 @@
     "grunt-contrib-concat": "latest",
     "grunt-contrib-connect": "latest",
     "grunt-contrib-watch": "latest",
+    "grunt-openport": "latest",
     "grunt-karma": "latest",
     "karma": "latest",
     "karma-jasmine": "latest",
