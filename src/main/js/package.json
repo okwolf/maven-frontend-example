@@ -15,6 +15,7 @@
     "karma": "latest",
     "karma-jasmine": "latest",
     "karma-phantomjs-launcher": "latest",
+    "karma-coverage": "latest",
     "jasmine-core": "latest",
     "phantomjs-prebuilt": "latest"
   },
