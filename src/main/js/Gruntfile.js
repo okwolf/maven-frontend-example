@@ -36,6 +36,7 @@ module.exports = function(grunt) {
           useAvailablePort: true,
           open: true,
           livereload: true,
+          hostname: 'localhost',
           middleware: function(connect) {
             return [
               serveStatic('../../src/main/webapp'),
