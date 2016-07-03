@@ -1,0 +1,25 @@
+{
+  "name": "frontend-example",
+  "description": "",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "bower": "latest",
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "grunt-contrib-jshint": "latest",
+    "grunt-contrib-concat": "latest",
+    "grunt-contrib-connect": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-karma": "latest",
+    "karma": "latest",
+    "karma-jasmine": "latest",
+    "karma-phantomjs-launcher": "latest",
+    "jasmine-core": "latest",
+    "phantomjs-prebuilt": "latest"
+  },
+  "scripts": {
+    "prebuild": "npm install && bower install",
+    "build": "grunt build"
+  }
+}
