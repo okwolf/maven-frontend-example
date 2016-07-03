@@ -4,7 +4,7 @@ This project is most useful if your Maven web project:
   * Don't forget to add a [proxy middleware](https://github.com/drewzboto/grunt-connect-proxy) if your API doesn't support [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 
 # Usage
-Use `mvn compile frontend:grunt` to develop with auto [JSHint](http://jshint.com), [Jasmine](https://jasmine.github.io), [Karma](https://karma-runner.github.io), and [LiveReload](https://github.com/napcs/node-livereload).
+Use `mvn compile frontend:grunt` to develop with auto [JSHint](http://jshint.com), [Jasmine](https://jasmine.github.io), [Karma](https://karma-runner.github.io) with [Coverage](https://github.com/karma-runner/karma-coverage), and [LiveReload](https://github.com/napcs/node-livereload).
 
  Use `mvn jetty:run-war` to test in a more "production" setting where the WAR is built and deployed.
 
