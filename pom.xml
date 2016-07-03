@@ -24,7 +24,7 @@
         <executions>
           <execution>
             <id>copy-frontend</id>
-            <phase>validate</phase>
+            <phase>process-sources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
