@@ -40,7 +40,7 @@ module.exports = function(grunt) {
           hostname: 'localhost',
           middleware: function(connect) {
             return [
-              serveStatic('../../src/main/webapp'),
+              serveStatic('../src/main/webapp'),
               connect().use('/js', serveStatic('dist'))
             ];
           }
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         tasks: ['build', 'karma:ci:run']
       },
       app: {
-        files: ['../../src/main/webapp/**/*'],
+        files: ['../src/main/webapp/**/*'],
         options: {
           livereload: true
         }

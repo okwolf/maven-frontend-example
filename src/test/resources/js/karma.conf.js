@@ -5,7 +5,7 @@ module.exports = function(config) {
     config.set({
         frameworks: ['jasmine'],
         files: files,
-        preprocessors: { '../../src/main/webapp/js/**/*.js': ['coverage']},
+        preprocessors: { '../src/main/js/**/*.js': ['coverage']},
         exclude: ['karma.conf*.js'],
         reporters: ['dots', 'coverage'],
         logLevel: config.LOG_INFO,

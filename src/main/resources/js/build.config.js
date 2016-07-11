@@ -1,12 +1,12 @@
 module.exports = {
   appJs: {
     files: [
-      '../../src/main/webapp/js/**/*.js'
+      '../src/main/js/**/*.js'
     ]
   },
   testJs: {
     files: [
-      '../../src/test/js/jasmine/**/*.js'
+      '../src/test/js/**/*.js'
     ]
   },
   userJs: {

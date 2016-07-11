@@ -13,14 +13,29 @@
   <properties>
     <encoding>UTF-8</encoding>
     <compiler.version>1.8</compiler.version>
-    <frontend.workingDirectory>${project.build.directory}/frontend</frontend.workingDirectory>
+    <frontend.installDirectory>frontend</frontend.installDirectory>
+    <frontend.workingDirectory>frontend</frontend.workingDirectory>
+    <nodejs.version>6.3.0</nodejs.version>
+    <npm.version>3.10.3</npm.version>
   </properties>
 
   <build>
     <plugins>
       <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>${frontend.workingDirectory}</directory>
+              <excludes>
+                <exclude>node**/**</exclude>
+              </excludes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>maven-resources-plugin</artifactId>
-        <version>3.0.1</version>
         <executions>
           <execution>
             <id>copy-frontend</id>
@@ -29,13 +44,13 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${project.build.directory}/frontend</outputDirectory>
+              <outputDirectory>${frontend.workingDirectory}</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/main/js</directory>
+                  <directory>src/main/resources/js</directory>
                 </resource>
                 <resource>
-                  <directory>src/test/js/config</directory>
+                  <directory>src/test/resources/js</directory>
                 </resource>
               </resources>
             </configuration>
@@ -62,7 +77,7 @@
         <artifactId>frontend-maven-plugin</artifactId>
         <version>1.0</version>
         <configuration>
-          <installDirectory>${frontend.workingDirectory}</installDirectory>
+          <installDirectory>${frontend.installDirectory}</installDirectory>
           <workingDirectory>${frontend.workingDirectory}</workingDirectory>
         </configuration>
         <executions>
@@ -72,8 +87,8 @@
               <goal>install-node-and-npm</goal>
             </goals>
             <configuration>
-              <nodeVersion>v6.2.2</nodeVersion>
-              <npmVersion>3.10.3</npmVersion>
+              <nodeVersion>v${nodejs.version}</nodeVersion>
+              <npmVersion>${npm.version}</npmVersion>
             </configuration>
           </execution>
           <execution>
@@ -91,7 +106,7 @@
               <goal>karma</goal>
             </goals>
             <configuration>
-              <karmaConfPath>${frontend.workingDirectory}/karma.conf.ci.js</karmaConfPath>
+              <karmaConfPath>karma.conf.ci.js</karmaConfPath>
             </configuration>
           </execution>
         </executions>
